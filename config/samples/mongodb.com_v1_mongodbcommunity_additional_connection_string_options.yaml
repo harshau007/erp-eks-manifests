@@ -37,7 +37,7 @@ spec:
           resources:
             requests:
               storage: 1Gi
-            storageClassName: "efs-sc"
+            storageClassName: efs-sc
 
 # the user credentials will be generated from this secret
 # once the credentials are generated, this secret is no longer required
