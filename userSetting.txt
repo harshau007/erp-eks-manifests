@@ -3,5 +3,21 @@ db.createUser(
   {
    user: "tcet",
    pwd: "tcet",
-   roles: [ "readWrite"]
+   roles: [ "readWrite" ]
   })
+
+
+  db.createUser(
+  {
+    user: 'harsh',
+    pwd: 'harsh',
+    roles: [ { role: 'root', db: 'admin' } ]
+  }
+);
+
+db.grantRolesToUser('harsh', [{ role: 'userAdminAnyDatabase', db: 'college'  }])
+
+db.createUser({ user: "harsh", pwd: "harsh", roles: ["readWrite", "dbAdmin"] })
+
+
+    db.grantRolesToUser('college',[{ role: "dbAdmin", db: "erp" }])
