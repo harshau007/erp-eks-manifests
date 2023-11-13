@@ -1,0 +1,7 @@
+use erp; //Created db erp use in uri of mongo at /erp?repli...
+db.createUser(
+  {
+   user: "tcet",
+   pwd: "tcet",
+   roles: [ "readWrite"]
+  })

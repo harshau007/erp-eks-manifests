@@ -27,6 +27,17 @@ spec:
     storage.wiredTiger.engineConfig.journalCompressor: zlib
   additionalConnectionStringConfig:
     readPreference: nearest
+  statefulSet:
+    spec:
+     volumeClaimTemplates:
+       - metadata:
+         name: data-volume
+         spec:
+          accessModes: [ "ReadWriteOnce" ]
+          resources:
+            requests:
+              storage: 1Gi
+            storageClassName: "efs-sc"
 
 # the user credentials will be generated from this secret
 # once the credentials are generated, this secret is no longer required
