@@ -34,7 +34,7 @@ watch kubectl get all
 
 ### 9. Exec into Primary DB ( find it if you can't )
 ```bash
-kubectl exec -it mongod-0 -- mongosh
+kubectl exec -it mongodb-0 -- mongosh
 ```
 
 ### 10. Add new user to erp db
@@ -53,6 +53,9 @@ exit
 ```
 
 ### 11. Test Login with new user
+```bash
+kubectl exec -it mongodb-0 -- /bin/bash
+```
 ```bash
 mongosh mongodb://<new-user>:<new-pass>@mongodb-0.mongodb-svc.default.svc.cluster.local:27017/erp?readPreference=nearest
 ```
