@@ -11,9 +11,9 @@ spec:
     authentication:
       modes: ["SCRAM-SHA-1"]
   users:
-    - name: harsh
+    - name: <your-username> # Change
       db: admin
-      passwordSecretRef: # a reference to the secret that will be used to generate the user's password
+      passwordSecretRef:
         name: my-user-password
       roles:
         - name: clusterAdmin
@@ -46,14 +46,12 @@ spec:
             requests:
               storage: 1Gi
             storageClassName: efs-sc
-
-# the user credentials will be generated from this secret
-# once the credentials are generated, this secret is no longer required
 ---
+# Only Required Once
 apiVersion: v1
 kind: Secret
 metadata:
   name: my-user-password
 type: Opaque
 stringData:
-  password: harsh
+  password: <your-password> # Change
