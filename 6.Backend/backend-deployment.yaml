@@ -18,7 +18,7 @@ spec:
       containers:
         - env:
             - name: DB_URL
-              value: mongodb://tcet:tcet@mongodb-0.mongodb-svc:27017,mongodb-1.mongodb-svc:27017,mongodb-2.mongodb-svc:27017/erp?replicaSet=mongodb&ssl=false&readPreference=nearest
+              value: mongodb://harsh:harsh@mongodb-0.mongodb-svc.default.svc.cluster.local:27017,mongodb-1.mongodb-svc.default.svc.cluster.local:27017,mongodb-2.mongodb-svc.default.svc.cluster.local:27017/erp?replicaSet=mongodb&ssl=false&readPreference=nearest
             - name: TOKEN_SECRET
               value: 316O6kPkiezPz7iwEULLMqn6XFmLfp0kos5bbGm0DsIuw7iaOwur9q1ujO2yyq4MRRSZIhuAjf7914x1igAoRePPzZRsaDg2mee5VnhrkaDzB1HinRU5y3JVOrY+sot8gurVdKoWeRR9HnqYV3Z92GdrIY1dJ2UE4sJ/jrJH1O/RYzr54x2NBJPJSlsj9GZ/Ny4c7RK2oWjGIQmYinHm7I5KpNMPdK95vqMEyrKFf/Wntiv82G1GjkS03530r5rBK1Ma0inFmNAf3flEh7kbYvVP/3BrDHadppuNHKjk5PPIfR1nwRWlXhLFWPxh3fZKW9Z59OzK/Jj2VfOcfhBxCg==
           image: harshau04/erp-backend:prod

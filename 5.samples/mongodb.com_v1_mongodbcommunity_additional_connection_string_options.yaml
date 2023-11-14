@@ -9,7 +9,7 @@ spec:
   version: "6.0.5"
   security:
     authentication:
-      modes: ["SCRAM"]
+      modes: ["SCRAM-SHA-1"]
   users:
     - name: harsh
       db: admin
@@ -20,6 +20,14 @@ spec:
           db: admin
         - name: userAdminAnyDatabase
           db: admin
+        - name: readWriteAnyDatabase
+          db: admin
+        - name: clusterAdmin
+          db: erp
+        - name: userAdminAnyDatabase
+          db: erp
+        - name: readWriteAnyDatabase
+          db: erp
       scramCredentialsSecretName: my-scram
       additionalConnectionStringConfig:
         readPreference: nearest
