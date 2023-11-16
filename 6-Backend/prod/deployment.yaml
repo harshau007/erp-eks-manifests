@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+      backend.service: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        backend.service: backend
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        backend.service: backend
+    spec:
+      containers:
+        - name: backend
+          image: harshau04/erp-backend:prod
+          ports:
+            - containerPort: 3000
+              hostPort: 3000
+              protocol: TCP
+          resources: {}
+          env:
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: env
+                key: DB_URL
+          - name: TOKEN_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: env
+                key: TOKEN_SECRET
+      restartPolicy: Always
+status: {}
