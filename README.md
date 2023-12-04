@@ -61,3 +61,13 @@ mongosh mongodb://<new-user>:<new-pass>@mongodb-0.mongodb-svc.default.svc.cluste
 ```
 
 ### 12. If Success, Apply Backend or else find issue 
+
+### Apply Backend (Using kustomize)
+#### For Dev
+```bash
+kubectl apply -k 6-Backend/dev
+```
+#### For Prod
+```bash
+kubectl apply -k 6-Backend/prod
+```
